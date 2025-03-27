@@ -7,9 +7,4 @@
     <RootNamespace>SignalR_Tutorial</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="9.0.3" />
-    <PackageReference Include="Microsoft.AspNetCore.SignalR.Common" Version="9.0.3" />
-  </ItemGroup>
-
 </Project>

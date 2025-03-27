@@ -1,12 +1,5 @@
-
-using Microsoft.AspNetCore.DataProtection.KeyManagement.Internal;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.SignalR.Client;
-using Microsoft.AspNetCore.Session;
-using SignalR_Tutorial.Hubs;
-using Microsoft.AspNetCore.Http;
-using System.Runtime.Serialization.Formatters.Binary;
 
 namespace SignalR_Tutorial.Pages;
 
@@ -27,7 +20,6 @@ public class IndexModel : PageModel
 
     public IActionResult OnPost()
     {
-        int x = 3;
         return RedirectToPage("/Game/Game", new { username = Username});
     }
 }
