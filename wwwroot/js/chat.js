@@ -82,10 +82,7 @@ function draw(startX, startY, endX, endY) {
 function drawOnMove(e) {
     if (!isDrawing) return;
 
-    draw(pos.x, pos.y, e.clientX - offsetX, e.clientY - offsetY);
-
-    const userId = connection.connectionId;
-    connection.invoke("SendDrawData", userId, pos.x, pos.y, e.clientX - offsetX, e.clientY - offsetY);
+    connection.invoke("SendDrawData", pos.x, pos.y, e.clientX - offsetX, e.clientY - offsetY);
 
     pos.x = e.clientX - offsetX;
     pos.y = e.clientY - offsetY;
@@ -97,10 +94,7 @@ function mouseOnCanvas(e) {
     pos.x = e.clientX - offsetX;
     pos.y = e.clientY - offsetY;
 
-    draw(pos.x, pos.y, e.clientX - offsetX, e.clientY - offsetY);
-
-    const userId = connection.connectionId;
-    connection.invoke("SendDrawData", userId, pos.x, pos.y, e.clientX - offsetX, e.clientY - offsetY);
+    connection.invoke("SendDrawData", pos.x, pos.y, e.clientX - offsetX, e.clientY - offsetY);
 }
 
 function stopDraw(e) {
