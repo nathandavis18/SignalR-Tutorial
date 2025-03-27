@@ -82,7 +82,12 @@ function draw(startX, startY, endX, endY) {
 function drawOnMove(e) {
     if (!isDrawing) return;
 
-    connection.invoke("SendDrawData", pos.x, pos.y, e.clientX - offsetX, e.clientY - offsetY);
+    const newX = e.clientX - offsetX;
+    const newY = e.clientY - offsetY;
+
+    if (Math.abs(newX - pos.x) + Math.abs(newY - pos.y) < 5) return;
+
+    connection.invoke("SendDrawData", pos.x, pos.y, newX, newY);
 
     pos.x = e.clientX - offsetX;
     pos.y = e.clientY - offsetY;
@@ -93,8 +98,6 @@ function mouseOnCanvas(e) {
     isDrawing = true;
     pos.x = e.clientX - offsetX;
     pos.y = e.clientY - offsetY;
-
-    connection.invoke("SendDrawData", pos.x, pos.y, e.clientX - offsetX, e.clientY - offsetY);
 }
 
 function stopDraw(e) {
