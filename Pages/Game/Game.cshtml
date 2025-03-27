@@ -1,0 +1,22 @@
+﻿@page
+@model SignalR_Tutorial.Pages.Game.GameModel
+@{
+}
+
+<div class="container screenDiv">
+    <div id="drawingBoard">
+        <canvas id="drawingCanvas"></canvas>
+    </div>
+    <div id="borderLine"> </div>
+    <div id="chatBoxArea">
+        <div id="messagesList"></div>
+        <div class="p-2" id="messageInput" contenteditable="true" autocomplete="off" autocorrect="off" spellcheck="true" aria-expanded="false"
+            aria-label="Message" dir="auto" placeholder="Send a message . . ."/>
+    </div>
+</div>
+
+<script>
+    var user = "@Model.Username";
+</script>
+<script src="~/lib/signalr/signalr.js"></script>
+<script src="~/js/chat.js"></script>

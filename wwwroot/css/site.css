@@ -1,0 +1,106 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: lightgray;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+    right: 45%;
+}
+#messagesList {
+    word-wrap: break-word;
+    overflow: auto;
+    max-height: calc(75vh - 60px);
+    margin-bottom: 10px;
+    scrollbar-width: thin;
+    padding-left: 5px;
+}
+
+
+#messageInput{
+    max-height: 100px;
+    height: 50px;
+    border: 1px solid black;
+    overflow: auto;
+    background-color: aliceblue;
+} 
+
+#messageInput[placeholder]:empty::before{
+      content: attr(placeholder);
+      cursor: text;
+      color: #555;
+  }
+
+
+.screenDiv {
+    position: relative;
+    height: 75vh;
+    background-color: white;
+    display: flex;
+}
+
+#chatBoxArea{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 250px;
+}
+
+#borderLine {
+    position: absolute;
+    right: 0;
+    height: 75vh;
+    width: 250px;
+    border-style: solid;
+    border-width: 0px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+}
+
+#userMsg {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    word-wrap: break-word;
+    width: 100%;
+}
+
+#message{
+    min-width: 0;
+    white-space: initial;
+    word-wrap: break-word;
+}
+
+#username{
+    margin-right: 5px;
+}
+
+#drawingBoard{
+    width: calc(100% - 250px);
+    height: 75vh;
+}
+
+#drawingCanvas{
+    margin-top: 10px;
+    background-color: antiquewhite
+}
