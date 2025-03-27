@@ -64,13 +64,13 @@ canvas.addEventListener("mouseup", stopDraw);
 canvas.width = document.getElementById("drawingBoard").offsetWidth;
 canvas.height = document.getElementById("drawingBoard").offsetHeight - 20;
 
-const ctx = canvas.getContext("2d");
-ctx.strokeStyle = "black";
-
 var pos = { x: 0, y: 0 };
 var isDrawing = false;
 
 function draw(startX, startY, endX, endY) {
+    const ctx = canvas.getContext("2d");
+    ctx.strokeStyle = "black";
+
     ctx.beginPath();
 
     ctx.moveTo(startX, startY);
